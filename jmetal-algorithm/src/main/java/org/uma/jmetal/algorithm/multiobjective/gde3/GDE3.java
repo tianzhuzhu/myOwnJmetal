@@ -15,7 +15,7 @@ import org.uma.jmetal.util.solutionattribute.impl.CrowdingDistance;
 import org.uma.jmetal.util.solutionattribute.impl.DominanceRanking;
 
 import java.util.*;
-
+//算法主函数
 /**
  * This class implements the GDE3 algorithm
  */
@@ -69,7 +69,7 @@ public class GDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
   @Override protected boolean isStoppingConditionReached() {
     return evaluations >= maxEvaluations;
   }
-
+//初始种群创建
   @Override protected List<DoubleSolution> createInitialPopulation() {
     List<DoubleSolution> population = new ArrayList<>(getMaxPopulationSize());
     for (int i = 0; i < getMaxPopulationSize(); i++) {
@@ -84,9 +84,11 @@ public class GDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
    * @param population The list of solutions to be evaluated
    * @return A list of evaluated solutions
    */
+  //评估
   @Override protected List<DoubleSolution> evaluatePopulation(List<DoubleSolution> population) {
     return evaluator.evaluate(population, getProblem());
   }
+  //选择
 
   @Override protected List<DoubleSolution> selection(List<DoubleSolution> population) {
     List<DoubleSolution> matingPopulation = new LinkedList<>();
@@ -101,6 +103,7 @@ public class GDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
 
     return matingPopulation;
   }
+  //繁衍
 
   @Override protected List<DoubleSolution> reproduction(List<DoubleSolution> matingPopulation) {
     List<DoubleSolution> offspringPopulation = new ArrayList<>();
@@ -121,7 +124,7 @@ public class GDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
 
     return offspringPopulation;
   }
-
+  //替换
   @Override protected List<DoubleSolution> replacement(List<DoubleSolution> population,
       List<DoubleSolution> offspringPopulation) {
     List<DoubleSolution> tmpList = new ArrayList<>();

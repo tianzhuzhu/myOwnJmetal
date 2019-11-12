@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author Antonio J. Nebro
  *     <p>Comments: - The operator receives two parameters: the current individual and an array of
- *     three parent individuals - The best and rand variants depends on the third parent, according
+ *     three parent individuals - The best and rand v ariants depends on the third parent, according
  *     whether it represents the current of the "best" individual or a random one. The
  *     implementation of both variants are the same, due to that the parent selection is external to
  *     the crossover operator. - Implemented variants: - rand/1/bin (best/1/bin) - rand/1/exp

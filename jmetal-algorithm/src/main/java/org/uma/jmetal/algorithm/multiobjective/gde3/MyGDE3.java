@@ -2,6 +2,7 @@ package org.uma.jmetal.algorithm.multiobjective.gde3;
 
 import org.uma.jmetal.algorithm.impl.AbstractDifferentialEvolution;
 import org.uma.jmetal.operator.crossover.impl.DifferentialEvolutionCrossover;
+import org.uma.jmetal.operator.crossover.impl.MyDifferentialEvolutionCrossover;
 import org.uma.jmetal.operator.selection.impl.DifferentialEvolutionSelection;
 import org.uma.jmetal.problem.doubleproblem.DoubleProblem;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
@@ -25,6 +26,7 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
   protected int maxEvaluations;
   protected int evaluations;
   private int maxPopulationSize ;
+  int currentNumber=0;
 
   protected Comparator<DoubleSolution> dominanceComparator;
 
@@ -37,18 +39,16 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
    * Constructor
    */
   public MyGDE3(DoubleProblem problem, int populationSize, int maxEvaluations,
-                DifferentialEvolutionSelection selection, DifferentialEvolutionCrossover crossover,
+                DifferentialEvolutionSelection selection, MyDifferentialEvolutionCrossover crossover,
                 SolutionListEvaluator<DoubleSolution> evaluator) {
     setProblem(problem);
     setMaxPopulationSize(populationSize);
     this.maxEvaluations = maxEvaluations;
     this.crossoverOperator = crossover;
     this.selectionOperator = selection;
-
     dominanceComparator = new DominanceComparator<DoubleSolution>();
     ranking = new DominanceRanking<DoubleSolution>();
     crowdingDistance = new CrowdingDistance<DoubleSolution>();
-
     this.evaluator = evaluator ;
   }
   
@@ -109,15 +109,25 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
   @Override protected List<DoubleSolution> reproduction(List<DoubleSolution> matingPopulation) {
     List<DoubleSolution> offspringPopulation = new ArrayList<>();
     DoubleSolution best=getProblem().createSolution();
+    DoubleSolution min = Collections.min(matingPopulation, dominanceComparator);
+    best=min;
+    int now=0;
+    currentNumber++;
+    double exp = Math.exp(-currentNumber*maxPopulationSize/evaluations);
+    crossoverOperator.setCr(1*exp);
+    crossoverOperator.setK(1*exp);
 
     for (int i = 0; i < getMaxPopulationSize(); i++) {
       crossoverOperator.setCurrentSolution(getPopulation().get(i));
       List<DoubleSolution> parents = new ArrayList<>(3);
+//      DoubleSolution max = Collections.max(matingPopulation, dominanceComparator);
+//      DoubleSolution min = Collections.min(matingPopulation, dominanceComparator);
+//      best=min;
+      parents.add(best);
       for (int j = 0; j < 3; j++) {
         parents.add(matingPopulation.get(0));
         matingPopulation.remove(0);
       }
-      Collections.sort(parents,dominanceComparator);
       crossoverOperator.setCurrentSolution(getPopulation().get(i));
 
       List<DoubleSolution> children = crossoverOperator.execute(parents);
