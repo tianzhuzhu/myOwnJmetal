@@ -33,7 +33,7 @@ public class SPEA2Runner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * @throws ClassNotFoundException Invoking command:
-   *                                java org.uma.jmetal.runner.multiobjective.spea2.SPEA2BinaryRunner problemName [referenceFront]
+   *                                java org.uma.jmetal.TestRunnerC3.multiobjective.spea2.SPEA2BinaryRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

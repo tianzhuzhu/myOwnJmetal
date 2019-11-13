@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class ElitistEvolutionStrategyRunner {
   /**
-   * Usage: java org.uma.jmetal.runner.singleobjective.ElitistEvolutionStrategyRunner
+   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.ElitistEvolutionStrategyRunner
    */
   public static void main(String[] args) throws Exception {
     Algorithm<BinarySolution> algorithm;

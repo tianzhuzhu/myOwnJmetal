@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class GenerationalGeneticAlgorithmDoubleEncodingRunner {
   /**
-   * Usage: java org.uma.jmetal.runner.singleobjective.GenerationalGeneticAlgorithmDoubleEncodingRunner
+   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.GenerationalGeneticAlgorithmDoubleEncodingRunner
    */
   public static void main(String[] args) throws Exception {
     Algorithm<DoubleSolution> algorithm;

@@ -17,6 +17,7 @@ import org.uma.jmetal.util.ProblemUtils;
 import org.uma.jmetal.util.evaluator.impl.SequentialSolutionListEvaluator;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -27,17 +28,17 @@ import java.util.List;
 public class EGDE3Runner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
-   * @throws SecurityException Invoking command: java org.uma.jmetal.runner.multiobjective.GDE3Runner
+   * @throws SecurityException Invoking command: java org.uma.jmetal.TestRunnerC3.multiobjective.GDE3Runner
    *                           problemName [referenceFront]
    */
-  public static void main(String[] args) throws FileNotFoundException {
+  public static void EDGE3(String[] args) throws IOException {
     int i = 30;
     while (i-- > 0) {
       DoubleProblem problem;
       Algorithm<List<DoubleSolution>> algorithm;
       DifferentialEvolutionSelection selection;
       MyDifferentialEvolutionCrossover crossover;
-
+      OwnAlgorithmRunner.setNum(30);
       String problemName;
       String referenceParetoFront = "";
       if (args.length == 1) {
@@ -52,7 +53,7 @@ public class EGDE3Runner extends AbstractAlgorithmRunner {
 
       problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
 
-      double cr = 0.5;
+      double cr = .5;
       double f = 0.5;
       crossover = new MyDifferentialEvolutionCrossover(cr, f, "rand/1/bin");
 
@@ -76,8 +77,10 @@ public class EGDE3Runner extends AbstractAlgorithmRunner {
       OwnAlgorithmRunner.printFinalSolutionSet(population);
 
       if (!referenceParetoFront.equals("")) {
-        printQualityIndicators(population, referenceParetoFront);
+
+        OwnAlgorithmRunner.printQualityIndicators(population, referenceParetoFront,"EGDE3");
       }
+
     }
 
   }

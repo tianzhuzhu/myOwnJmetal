@@ -113,9 +113,9 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
     best=min;
     int now=0;
     currentNumber++;
-    double exp = Math.exp(-currentNumber*maxPopulationSize/evaluations);
-    crossoverOperator.setCr(1*exp);
-    crossoverOperator.setK(1*exp);
+    double exp = Math.exp(-3*currentNumber*maxPopulationSize/evaluations);
+    crossoverOperator.setCr(3*exp);
+    crossoverOperator.setK(3*exp);
 
     for (int i = 0; i < getMaxPopulationSize(); i++) {
       crossoverOperator.setCurrentSolution(getPopulation().get(i));

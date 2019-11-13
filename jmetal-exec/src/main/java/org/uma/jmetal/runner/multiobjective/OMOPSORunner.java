@@ -27,7 +27,7 @@ public class OMOPSORunner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.runner.multiobjective.OMOPSORunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC3.multiobjective.OMOPSORunner problemName [referenceFront]
    */
   public static void main(String[] args) throws Exception {
     DoubleProblem problem;

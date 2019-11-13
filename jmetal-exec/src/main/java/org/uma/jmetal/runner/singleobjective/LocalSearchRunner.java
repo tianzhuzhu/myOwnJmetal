@@ -18,7 +18,7 @@ import java.util.Comparator;
  */
 public class LocalSearchRunner {
   /**
-   * Usage: java org.uma.jmetal.runner.singleobjective.LocalSearchRunner
+   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.LocalSearchRunner
    */
   public static void main(String[] args) throws Exception {
     BinaryProblem problem = new OneMax(1024) ;

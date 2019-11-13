@@ -32,7 +32,7 @@ public class NSGAIIIntegerRunner extends AbstractAlgorithmRunner {
    * @throws SecurityException
    * @throws ClassNotFoundException
    * Invoking command:
-  java org.uma.jmetal.runner.multiobjective.nsgaii.NSGAIIIntegerRunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIIntegerRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws FileNotFoundException {
     Problem<IntegerSolution> problem;

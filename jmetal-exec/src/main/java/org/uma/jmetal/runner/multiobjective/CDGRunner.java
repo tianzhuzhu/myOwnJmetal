@@ -38,7 +38,7 @@ public class CDGRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws ClassNotFoundException
    * @throws SecurityException      Invoking command:
-   *                                java org.uma.jmetal.runner.multiobjective.CDGRunner problemName [referenceFront]
+   *                                java org.uma.jmetal.TestRunnerC3.multiobjective.CDGRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException {
     DoubleProblem problem;

@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class SteadyStateGeneticAlgorithmBinaryEncodingRunner {
   /**
-   * Usage: java org.uma.jmetal.runner.singleobjective.SteadyStateGeneticAlgorithmBinaryEncodingRunner
+   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.SteadyStateGeneticAlgorithmBinaryEncodingRunner
    */
   public static void main(String[] args) throws Exception {
     BinaryProblem problem;

@@ -42,7 +42,7 @@ public class ParallelNSGAIIRunner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
    * @throws SecurityException Invoking command: java
-   *     org.uma.jmetal.runner.multiobjective.nsgaii.ParallelNSGAIIRunner problemName [referenceFront]
+   *     org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.ParallelNSGAIIRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     DoubleProblem problem;
@@ -111,7 +111,7 @@ public class ParallelNSGAIIRunner extends AbstractAlgorithmRunner {
   public static class GNSGAIIMeasuresWithChartsRunner extends AbstractAlgorithmRunner {
     /**
      * @param args Command line arguments.
-     * @throws SecurityException Invoking command: java org.uma.jmetal.runner.multiobjective.nsgaii.NSGAIIMeasuresRunner
+     * @throws SecurityException Invoking command: java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIMeasuresRunner
      *                           problemName [referenceFront]
      */
     public static void main(String[] args) throws JMetalException, InterruptedException, IOException {

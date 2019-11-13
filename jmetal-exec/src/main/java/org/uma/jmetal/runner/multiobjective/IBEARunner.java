@@ -29,7 +29,7 @@ public class IBEARunner extends AbstractAlgorithmRunner {
    * @throws SecurityException
    * @throws ClassNotFoundException
    * Invoking command:
-  java org.uma.jmetal.runner.multiobjective.IBEARunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC3.multiobjective.IBEARunner problemName [referenceFront]
    */
   public static void main(String[] args) throws Exception {
     Problem<DoubleSolution> problem;

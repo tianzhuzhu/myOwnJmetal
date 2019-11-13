@@ -34,7 +34,7 @@ public class GMOCellRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws JMetalException
    * @throws FileNotFoundException Invoking command: java
-   *     org.uma.jmetal.runner.multiobjective.MOCellRunner problemName [referenceFront]
+   *     org.uma.jmetal.TestRunnerC3.multiobjective.MOCellRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

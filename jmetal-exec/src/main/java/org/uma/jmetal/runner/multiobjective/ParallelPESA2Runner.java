@@ -29,7 +29,7 @@ public class ParallelPESA2Runner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.runner.multiobjective.ParallelPESA2Runner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC3.multiobjective.ParallelPESA2Runner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

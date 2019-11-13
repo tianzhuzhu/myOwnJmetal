@@ -23,7 +23,7 @@ import java.util.List;
 
 /**
  * created at 2:50 pm, 2019/1/29
- * runner of DIR-Enhanced NSGA-II
+ * TestRunnerC3 of DIR-Enhanced NSGA-II
  *
  * @author sunhaoran <nuaa_sunhr@yeah.net>
  */

@@ -31,7 +31,8 @@ public abstract class AbstractAlgorithmRunner {
         .setSeparator("\t")
         .setVarFileOutputContext(new DefaultFileOutputContext("VAR.tsv"))
         .setFunFileOutputContext(new DefaultFileOutputContext("FUN.tsv"))
-        .print();
+        .print()
+    ;
 
     JMetalLogger.logger.info("Random seed: " + JMetalRandom.getInstance().getSeed());
     JMetalLogger.logger.info("Objectives values have been written to file FUN.tsv");

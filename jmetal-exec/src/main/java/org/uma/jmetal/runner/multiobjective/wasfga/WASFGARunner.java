@@ -28,7 +28,7 @@ public class WASFGARunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws JMetalException
    * @throws FileNotFoundException Invoking command: java
-   *     org.uma.jmetal.runner.multiobjective.WASFGA.WASFGABinaryRunner problemName [referenceFront]
+   *     org.uma.jmetal.TestRunnerC3.multiobjective.WASFGA.WASFGABinaryRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, IOException {
     /*Problem<DoubleSolution> problem;
