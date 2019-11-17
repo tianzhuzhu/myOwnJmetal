@@ -1,11 +1,11 @@
-package org.uma.jmetal.runner.multiobjective.ownCode;
+package org.uma.jmetal.runner.multiobjective.ownCode.charpater4;
 
-import org.uma.jmetal.algorithm.multiobjective.mocell.MOCell;
-import org.uma.jmetal.algorithm.multiobjective.moead.MOEAD;
+import org.uma.jmetal.runner.multiobjective.ownCode.EGDE3Runner;
+import org.uma.jmetal.runner.multiobjective.ownCode.MOCellRunner;
+import org.uma.jmetal.runner.multiobjective.ownCode.MOEADRunner;
+import org.uma.jmetal.runner.multiobjective.ownCode.NSGAIIRunner;
 
-import java.io.FileNotFoundException;
-
-public class TestRunnerC3 {
+public class DataSheetRunnerC3 {
     public static void main(String[] args) {
         String problemName="org.uma.jmetal.problem.multiobjective.zdt.ZDT3";
 
@@ -22,7 +22,7 @@ public class TestRunnerC3 {
             EGDE3Runner.EDGE3(args);
             MOCellRunner.MOCell(args);
             NSGAIIRunner.NSGAII(args);
-            SMPSORunner.SMPSO(args);
+            MOEADRunner.MOEAD(args);
 
         } catch (Exception e) {
             e.printStackTrace();

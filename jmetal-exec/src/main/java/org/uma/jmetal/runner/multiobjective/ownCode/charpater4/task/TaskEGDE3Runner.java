@@ -1,19 +1,21 @@
-package org.uma.jmetal.runner.multiobjective.ownCode;
+package org.uma.jmetal.runner.multiobjective.ownCode.charpater4.task;
 
 import org.uma.jmetal.algorithm.Algorithm;
-import org.uma.jmetal.algorithm.multiobjective.gde3.GDE3Builder;
-import org.uma.jmetal.operator.crossover.impl.DifferentialEvolutionCrossover;
+import org.uma.jmetal.algorithm.multiobjective.gde3.MyGDE3Builder;
+import org.uma.jmetal.operator.crossover.impl.MyDifferentialEvolutionCrossover;
+import org.uma.jmetal.operator.crossover.impl.MyReourceEvolutionCrossover;
 import org.uma.jmetal.operator.selection.impl.DifferentialEvolutionSelection;
 import org.uma.jmetal.problem.doubleproblem.DoubleProblem;
 import org.uma.jmetal.runner.AlgorithmRunner;
+import org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4.QosResource;
+import org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4.QosTask;
+import org.uma.jmetal.runner.multiobjective.ownCode.charpater4.DataSheetAlgorithmRunner;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
 import org.uma.jmetal.util.AbstractAlgorithmRunner;
-import org.uma.jmetal.util.JMetalLogger;
 import org.uma.jmetal.util.OwnAlgorithmRunner;
 import org.uma.jmetal.util.ProblemUtils;
 import org.uma.jmetal.util.evaluator.impl.SequentialSolutionListEvaluator;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,20 +24,20 @@ import java.util.List;
  *
  * @author Antonio J. Nebro <antonio@lcc.uma.es>
  */
-public class GDE3Runner extends AbstractAlgorithmRunner {
+public class TaskEGDE3Runner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
    * @throws SecurityException Invoking command: java org.uma.jmetal.TestRunnerC3.multiobjective.GDE3Runner
    *                           problemName [referenceFront]
    */
-  public static void GDE3(String[] args) throws FileNotFoundException {
+  public static void EDGE3(String[] args) throws IOException {
     int i = 30;
     while (i-- > 0) {
       DoubleProblem problem;
       Algorithm<List<DoubleSolution>> algorithm;
       DifferentialEvolutionSelection selection;
-      DifferentialEvolutionCrossover crossover;
-
+      MyDifferentialEvolutionCrossover crossover;
+//      OwnAlgorithmRunner.setNum(30);
       String problemName;
       String referenceParetoFront = "";
       if (args.length == 1) {
@@ -44,19 +46,19 @@ public class GDE3Runner extends AbstractAlgorithmRunner {
         problemName = args[0];
         referenceParetoFront = args[1];
       } else {
-        problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
-        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT1.pf";
+        problemName = "org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4.QosResource";
+//        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT1.pf";
       }
 
       problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
 
-      double cr = 0.5;
+      double cr = .5;
       double f = 0.5;
-      crossover = new DifferentialEvolutionCrossover(cr, f, "rand/1/bin");
+      crossover = new MyReourceEvolutionCrossover(cr, f, "rand/1/bin");
 
       selection = new DifferentialEvolutionSelection();
 
-      algorithm = new GDE3Builder(problem)
+      algorithm = new MyGDE3Builder(problem)
               .setCrossover(crossover)
               .setSelection(selection)
               .setMaxEvaluations(25000)
@@ -70,16 +72,13 @@ public class GDE3Runner extends AbstractAlgorithmRunner {
       List<DoubleSolution> population = algorithm.getResult();
       long computingTime = algorithmRunner.getComputingTime();
 
-      JMetalLogger.logger.info("Total execution time: " + computingTime + "ms");
-//      DataSheetAlgorithmRunner.setNum(30);
-    OwnAlgorithmRunner.printFinalSolutionSet(population);
-      if (!referenceParetoFront.equals("")) {
-        try {
-          OwnAlgorithmRunner.printQualityIndicators(population, referenceParetoFront);
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-      }
+      DataSheetAlgorithmRunner.printFinalSolutionSet(population,"EGDE3","Task", ""+ QosTask.getAmount());
     }
+
+  }
+
+  public static void main(String[] args) throws IOException {
+    String string[]=new String[0];
+    EDGE3(string);
   }
 }

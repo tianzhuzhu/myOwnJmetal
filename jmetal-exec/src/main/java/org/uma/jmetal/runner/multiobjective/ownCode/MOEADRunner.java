@@ -28,7 +28,7 @@ public class MOEADRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.moead.MOEADRunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC3.multiobjective.moead.ResourceMOEADRunner problemName [referenceFront]
    */
   public static void MOEAD(String[] args) throws IOException {
     int i=30;
@@ -46,8 +46,8 @@ public class MOEADRunner extends AbstractAlgorithmRunner {
       problemName = args[0] ;
       referenceParetoFront = args[1] ;
     } else {
-      problemName = "org.uma.jmetal.problem.multiobjective.lz09.LZ09F2";
-      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/LZ09_F2.pf";
+      problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
+      referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT1.pf";
     }
 
     problem = (DoubleProblem)ProblemUtils.<DoubleSolution> loadProblem(problemName);

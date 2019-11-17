@@ -1,4 +1,4 @@
-package org.uma.jmetal.problem.multiobjective.OwnProblem.Capater4;
+package org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4;
 
 import org.uma.jmetal.problem.doubleproblem.impl.AbstractDoubleProblem;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
@@ -8,10 +8,10 @@ import java.util.List;
 
 /** Class representing problem ZDT1 */
 @SuppressWarnings("serial")
-public class QosTask extends AbstractDoubleProblem {
+public class ZDT1 extends AbstractDoubleProblem {
 
   /** Constructor. Creates default instance of problem ZDT1 (30 decision variables) */
-  public QosTask() {
+  public ZDT1() {
     this(30);
   }
 
@@ -20,7 +20,7 @@ public class QosTask extends AbstractDoubleProblem {
    *
    * @param numberOfVariables Number of variables.
    */
-  public QosTask(Integer numberOfVariables) {
+  public ZDT1(Integer numberOfVariables) {
     setNumberOfVariables(numberOfVariables);
     setNumberOfObjectives(2);
     setName("ZDT1");

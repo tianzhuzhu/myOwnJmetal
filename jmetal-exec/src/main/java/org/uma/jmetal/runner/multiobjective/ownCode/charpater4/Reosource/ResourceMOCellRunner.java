@@ -1,7 +1,7 @@
-package org.uma.jmetal.runner.multiobjective.ownCode;
+package org.uma.jmetal.runner.multiobjective.ownCode.charpater4.Reosource;
 
 import org.uma.jmetal.algorithm.Algorithm;
-import org.uma.jmetal.algorithm.multiobjective.nsgaii.NSGAIIBuilder;
+import org.uma.jmetal.algorithm.multiobjective.mocell.MOCellBuilder;
 import org.uma.jmetal.operator.crossover.CrossoverOperator;
 import org.uma.jmetal.operator.crossover.impl.SBXCrossover;
 import org.uma.jmetal.operator.mutation.MutationOperator;
@@ -10,28 +10,33 @@ import org.uma.jmetal.operator.selection.SelectionOperator;
 import org.uma.jmetal.operator.selection.impl.BinaryTournamentSelection;
 import org.uma.jmetal.problem.Problem;
 import org.uma.jmetal.runner.AlgorithmRunner;
+import org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4.QosResource;
+import org.uma.jmetal.runner.multiobjective.ownCode.charpater4.DataSheetAlgorithmRunner;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
 import org.uma.jmetal.util.*;
+import org.uma.jmetal.util.archive.impl.CrowdingDistanceArchive;
 import org.uma.jmetal.util.comparator.RankingAndCrowdingDistanceComparator;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
- * Class to configure and run the NSGA-II algorithm
+ * Class to configure and run the MOCell algorithm
  *
  * @author Antonio J. Nebro <antonio@lcc.uma.es>
  */
-public class NSGAIIRunner extends AbstractAlgorithmRunner {
+public class ResourceMOCellRunner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
    * @throws JMetalException
-   * @throws FileNotFoundException Invoking command:
-   *                               java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.ResoueceNSGAIIRunner problemName [referenceFront]
+   * @throws FileNotFoundException
+   * Invoking command:
+    java org.uma.jmetal.TestRunnerC3.multiobjective.ResourceMOCellRunner problemName [referenceFront]
    */
-  public static void NSGAII(String[] args) throws Exception {
-    int i = 30;
-    while (i-- > 0) {
+  public static void MOCell(String[] args) throws JMetalException, IOException {
+    int i=30;
+    while(i-->0) {
       Problem<DoubleSolution> problem;
       Algorithm<List<DoubleSolution>> algorithm;
       CrossoverOperator<DoubleSolution> crossover;
@@ -46,8 +51,8 @@ public class NSGAIIRunner extends AbstractAlgorithmRunner {
         problemName = args[0];
         referenceParetoFront = args[1];
       } else {
-        problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
-        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT1.pf";
+        problemName = "org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater4.QosResource";
+        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT4.pf";
       }
 
       problem = ProblemUtils.<DoubleSolution>loadProblem(problemName);
@@ -60,13 +65,13 @@ public class NSGAIIRunner extends AbstractAlgorithmRunner {
       double mutationDistributionIndex = 20.0;
       mutation = new PolynomialMutation(mutationProbability, mutationDistributionIndex);
 
-      selection = new BinaryTournamentSelection<DoubleSolution>(
-              new RankingAndCrowdingDistanceComparator<DoubleSolution>());
+      selection = new BinaryTournamentSelection<DoubleSolution>(new RankingAndCrowdingDistanceComparator<DoubleSolution>());
 
-      int populationSize = 100;
-      algorithm = new NSGAIIBuilder<DoubleSolution>(problem, crossover, mutation, populationSize)
+      algorithm = new MOCellBuilder<DoubleSolution>(problem, crossover, mutation)
               .setSelectionOperator(selection)
               .setMaxEvaluations(25000)
+              .setPopulationSize(100)
+              .setArchive(new CrowdingDistanceArchive<DoubleSolution>(100))
               .build();
 
       AlgorithmRunner algorithmRunner = new AlgorithmRunner.Executor(algorithm)
@@ -76,11 +81,7 @@ public class NSGAIIRunner extends AbstractAlgorithmRunner {
       long computingTime = algorithmRunner.getComputingTime();
 
       JMetalLogger.logger.info("Total execution time: " + computingTime + "ms");
-
-      printFinalSolutionSet(population);
-      if (!referenceParetoFront.equals("")) {
-        OwnAlgorithmRunner.printQualityIndicators(population, referenceParetoFront,"NSGAII");
-      }
+      DataSheetAlgorithmRunner.printFinalSolutionSet(population,"MOCEll","Reousece"+ QosResource.getAmount());
     }
   }
 }

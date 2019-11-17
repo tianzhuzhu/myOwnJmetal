@@ -1,4 +1,4 @@
-package org.uma.jmetal.problem.multiobjective.OwnProblem.Capater5;
+package org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater5;
 
 import org.uma.jmetal.problem.doubleproblem.impl.AbstractDoubleProblem;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;

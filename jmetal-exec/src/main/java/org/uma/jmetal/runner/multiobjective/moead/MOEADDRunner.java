@@ -27,7 +27,7 @@ public class MOEADDRunner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
    * @throws SecurityException Invoking command: java
-   * org.uma.jmetal.TestRunnerC3.multiobjective.moead.MOEADRunner problemName
+   * org.uma.jmetal.TestRunnerC3.multiobjective.moead.ResourceMOEADRunner problemName
    * [referenceFront]
    */
   public static void main(String[] args) throws FileNotFoundException {

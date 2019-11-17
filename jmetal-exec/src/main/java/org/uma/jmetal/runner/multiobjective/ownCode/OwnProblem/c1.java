@@ -1,4 +1,4 @@
-package org.uma.jmetal.problem.multiobjective.OwnProblem;
+package org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem;
 
 public class c1 {
 }

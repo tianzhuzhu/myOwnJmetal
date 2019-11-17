@@ -1,7 +1,6 @@
 package org.uma.jmetal.algorithm.multiobjective.gde3;
 
 import org.uma.jmetal.algorithm.impl.AbstractDifferentialEvolution;
-import org.uma.jmetal.operator.crossover.impl.DifferentialEvolutionCrossover;
 import org.uma.jmetal.operator.crossover.impl.MyDifferentialEvolutionCrossover;
 import org.uma.jmetal.operator.selection.impl.DifferentialEvolutionSelection;
 import org.uma.jmetal.problem.doubleproblem.DoubleProblem;
@@ -22,7 +21,7 @@ import java.util.*;
  * This class implements the GDE3 algorithm
  */
 @SuppressWarnings("serial")
-public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
+public class MyReourceGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> {
   protected int maxEvaluations;
   protected int evaluations;
   private int maxPopulationSize ;
@@ -38,9 +37,9 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
   /**
    * Constructor
    */
-  public MyGDE3(DoubleProblem problem, int populationSize, int maxEvaluations,
-                DifferentialEvolutionSelection selection, MyDifferentialEvolutionCrossover crossover,
-                SolutionListEvaluator<DoubleSolution> evaluator) {
+  public MyReourceGDE3(DoubleProblem problem, int populationSize, int maxEvaluations,
+                       DifferentialEvolutionSelection selection, MyDifferentialEvolutionCrossover crossover,
+                       SolutionListEvaluator<DoubleSolution> evaluator) {
     setProblem(problem);
     setMaxPopulationSize(populationSize);
     this.maxEvaluations = maxEvaluations;
@@ -113,11 +112,10 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
     best=min;
     int now=0;
     currentNumber++;
-//    double exp = Math.exp(-2*currentNumber*maxPopulationSize/evaluations);
-//    crossoverOperator.setCr(2*exp);
-//    crossoverOperator.setK(2*exp);
-    crossoverOperator.setCr(.25+currentNumber*maxPopulationSize/evaluations);
-    crossoverOperator.setK(.25+currentNumber*maxPopulationSize/evaluations);
+    double exp = Math.exp(-1*currentNumber*maxPopulationSize/evaluations);
+    crossoverOperator.setCr(1*exp);
+    crossoverOperator.setK(1*exp);
+
     for (int i = 0; i < getMaxPopulationSize(); i++) {
       crossoverOperator.setCurrentSolution(getPopulation().get(i));
       List<DoubleSolution> parents = new ArrayList<>(3);

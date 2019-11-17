@@ -30,7 +30,7 @@ public class MOCellRunner extends AbstractAlgorithmRunner {
    * @throws JMetalException
    * @throws FileNotFoundException
    * Invoking command:
-    java org.uma.jmetal.TestRunnerC3.multiobjective.MOCellRunner problemName [referenceFront]
+    java org.uma.jmetal.TestRunnerC3.multiobjective.ResourceMOCellRunner problemName [referenceFront]
    */
   public static void MOCell(String[] args) throws JMetalException, IOException {
     int i=30;
@@ -49,8 +49,8 @@ public class MOCellRunner extends AbstractAlgorithmRunner {
         problemName = args[0];
         referenceParetoFront = args[1];
       } else {
-        problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT4";
-        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT4.pf";
+        problemName = "org.uma.jmetal.problem.multiobjective.zdt.ZDT1";
+        referenceParetoFront = "jmetal-problem/src/test/resources/pareto_fronts/ZDT1.pf";
       }
 
       problem = ProblemUtils.<DoubleSolution>loadProblem(problemName);

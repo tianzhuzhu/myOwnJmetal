@@ -30,7 +30,7 @@ public class NSGAIIRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws JMetalException
    * @throws FileNotFoundException Invoking command:
-   *                               java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIRunner problemName [referenceFront]
+   *                               java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.ResoueceNSGAIIRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

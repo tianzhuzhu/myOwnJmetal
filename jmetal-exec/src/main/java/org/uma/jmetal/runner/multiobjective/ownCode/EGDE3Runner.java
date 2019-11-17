@@ -9,6 +9,7 @@ import org.uma.jmetal.operator.selection.impl.DifferentialEvolutionSelection;
 import org.uma.jmetal.problem.doubleproblem.DoubleProblem;
 import org.uma.jmetal.qualityindicator.impl.InvertedGenerationalDistance;
 import org.uma.jmetal.runner.AlgorithmRunner;
+import org.uma.jmetal.runner.multiobjective.ownCode.charpater4.DataSheetAlgorithmRunner;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
 import org.uma.jmetal.util.AbstractAlgorithmRunner;
 import org.uma.jmetal.util.JMetalLogger;
@@ -52,7 +53,6 @@ public class EGDE3Runner extends AbstractAlgorithmRunner {
       }
 
       problem = (DoubleProblem) ProblemUtils.<DoubleSolution>loadProblem(problemName);
-
       double cr = .5;
       double f = 0.5;
       crossover = new MyDifferentialEvolutionCrossover(cr, f, "rand/1/bin");
@@ -74,11 +74,10 @@ public class EGDE3Runner extends AbstractAlgorithmRunner {
       long computingTime = algorithmRunner.getComputingTime();
 
       JMetalLogger.logger.info("Total execution time: " + computingTime + "ms");
-      OwnAlgorithmRunner.printFinalSolutionSet(population);
 
+      printFinalSolutionSet(population);
       if (!referenceParetoFront.equals("")) {
-
-        OwnAlgorithmRunner.printQualityIndicators(population, referenceParetoFront,"EGDE3");
+        OwnAlgorithmRunner.printQualityIndicators(population, referenceParetoFront,"EDG3");
       }
 
     }
