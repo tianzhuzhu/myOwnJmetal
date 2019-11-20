@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class SteadyStateGeneticAlgorithmRunner {
   /**
-   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.SteadyStateGeneticAlgorithmRunner
+   * Usage: java org.uma.jmetal.TestRunnerC5.singleobjective.SteadyStateGeneticAlgorithmRunner
    */
   public static void main(String[] args) throws Exception {
     Algorithm<DoubleSolution> algorithm;

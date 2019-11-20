@@ -30,9 +30,9 @@ public class NSGAIIIRunner extends AbstractAlgorithmRunner {
    * @throws SecurityException
    * @throws ClassNotFoundException
    * Usage: three options
-   *        - org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIIRunner
-   *        - org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIIRunner problemName
-   *        - org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIIRunner problemName paretoFrontFile
+   *        - org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIIIRunner
+   *        - org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIIIRunner problemName
+   *        - org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIIIRunner problemName paretoFrontFile
    */
   public static void main(String[] args) throws JMetalException {
 	    Problem<DoubleSolution> problem;

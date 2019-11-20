@@ -113,11 +113,11 @@ public class MyGDE3 extends AbstractDifferentialEvolution<List<DoubleSolution>> 
     best=min;
     int now=0;
     currentNumber++;
-//    double exp = Math.exp(-2*currentNumber*maxPopulationSize/evaluations);
-//    crossoverOperator.setCr(2*exp);
-//    crossoverOperator.setK(2*exp);
-    crossoverOperator.setCr(.25+currentNumber*maxPopulationSize/evaluations);
-    crossoverOperator.setK(.25+currentNumber*maxPopulationSize/evaluations);
+    double exp = Math.exp(-2*currentNumber*maxPopulationSize/evaluations);
+    crossoverOperator.setCr(2*exp);
+    crossoverOperator.setK(2*exp);
+//    crossoverOperator.setCr(.25+currentNumber*maxPopulationSize/evaluations);
+//    crossoverOperator.setK(.25+currentNumber*maxPopulationSize/evaluations);
     for (int i = 0; i < getMaxPopulationSize(); i++) {
       crossoverOperator.setCurrentSolution(getPopulation().get(i));
       List<DoubleSolution> parents = new ArrayList<>(3);

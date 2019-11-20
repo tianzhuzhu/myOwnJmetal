@@ -34,7 +34,7 @@ public class SMPSORPChangingTheReferencePointsAndChartsRunnerZDT1 {
    * Articulation. Antonio J. Nebro, Juan J. Durillo, José García-Nieto, Cristóbal Barba-González,
    * Javier Del Ser, Carlos A. Coello Coello, Antonio Benítez-Hidalgo, José F. Aldana-Montes.
    * Parallel Problem Solving from Nature -- PPSN XV. Lecture Notes In Computer Science, Vol. 11101,
-   *  pp. 298-310. 2018." This TestRunnerC3 is the one used in the use case included in the paper.
+   *  pp. 298-310. 2018." This TestRunnerC5 is the one used in the use case included in the paper.
    *
    * In the current implementation, only one reference point can be modified interactively.
    *

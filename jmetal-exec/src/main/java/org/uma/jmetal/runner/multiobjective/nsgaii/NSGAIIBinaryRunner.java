@@ -31,7 +31,7 @@ public class NSGAIIBinaryRunner extends AbstractAlgorithmRunner {
    * @throws SecurityException
    * @throws ClassNotFoundException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIBinaryRunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIIBinaryRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws Exception {
     BinaryProblem problem;

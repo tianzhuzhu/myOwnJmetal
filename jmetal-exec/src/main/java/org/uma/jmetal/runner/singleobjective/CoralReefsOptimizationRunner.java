@@ -28,7 +28,7 @@ import java.util.List;
 public class CoralReefsOptimizationRunner {
 	/**
 	 * Usage: java
-	 * org.uma.jmetal.TestRunnerC3.singleobjective.CoralReefsOptimizationRunner
+	 * org.uma.jmetal.TestRunnerC5.singleobjective.CoralReefsOptimizationRunner
 	 */
 	public static void main(String[] args) throws Exception {
 		Algorithm<List<BinarySolution>> algorithm;

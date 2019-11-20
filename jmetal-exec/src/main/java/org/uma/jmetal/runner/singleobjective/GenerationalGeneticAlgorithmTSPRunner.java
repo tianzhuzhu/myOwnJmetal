@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class GenerationalGeneticAlgorithmTSPRunner {
   /**
-   * Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.BinaryGenerationalGeneticAlgorithmRunner
+   * Usage: java org.uma.jmetal.TestRunnerC5.singleobjective.BinaryGenerationalGeneticAlgorithmRunner
    */
   public static void main(String[] args) throws Exception {
     PermutationProblem<PermutationSolution<Integer>> problem;

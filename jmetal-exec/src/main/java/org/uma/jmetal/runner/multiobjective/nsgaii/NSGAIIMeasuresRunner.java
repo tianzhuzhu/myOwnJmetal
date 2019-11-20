@@ -34,7 +34,7 @@ public class NSGAIIMeasuresRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIIMeasuresRunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIIMeasuresRunner problemName [referenceFront]
    */
   public static void main(String[] args)
       throws JMetalException, InterruptedException, FileNotFoundException {

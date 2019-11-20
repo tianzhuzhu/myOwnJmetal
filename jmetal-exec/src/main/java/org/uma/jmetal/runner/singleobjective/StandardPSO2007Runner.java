@@ -26,7 +26,7 @@ public class StandardPSO2007Runner {
   private static final int DEFAULT_NUMBER_OF_CORES = 1 ;
 
   /**
-   *  Usage: java org.uma.jmetal.TestRunnerC3.singleobjective.StandardPSO2007Runner [cores]
+   *  Usage: java org.uma.jmetal.TestRunnerC5.singleobjective.StandardPSO2007Runner [cores]
    */
   public static void main(String[] args) throws Exception {
 

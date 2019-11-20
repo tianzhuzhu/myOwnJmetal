@@ -31,7 +31,7 @@ public class ResoueceSMPSORunner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.smpso.SMPSORunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.smpso.SMPSORunner problemName [referenceFront]
    */
   public static void SMPSO(String[] args) throws Exception {
     int i=30;

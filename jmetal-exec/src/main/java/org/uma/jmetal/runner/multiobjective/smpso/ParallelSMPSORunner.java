@@ -31,7 +31,7 @@ public class ParallelSMPSORunner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.smpso.ParallelSMPSORunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.smpso.ParallelSMPSORunner problemName [referenceFront]
    */
   public static void main(String[] args) throws Exception {
     DoubleProblem problem;

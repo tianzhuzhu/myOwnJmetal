@@ -31,7 +31,7 @@ public class SMSEMOARunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.SMSEMOARunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.SMSEMOARunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     DoubleProblem problem;

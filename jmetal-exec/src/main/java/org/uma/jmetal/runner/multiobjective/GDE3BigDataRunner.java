@@ -28,7 +28,7 @@ public class GDE3BigDataRunner {
    * Invoking command:
    mvn
     -pl jmetal-exec
-    exec:java -Dexec.mainClass="org.uma.jmetal.TestRunnerC3.multiobjective.GDE3BigDataRunner"
+    exec:java -Dexec.mainClass="org.uma.jmetal.TestRunnerC5.multiobjective.GDE3BigDataRunner"
     -Dexec.args="[problemName]"
    */
   public static void main(String[] args) {

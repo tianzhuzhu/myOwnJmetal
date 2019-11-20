@@ -25,7 +25,7 @@ import java.util.List;
 public class GDE3Runner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
-   * @throws SecurityException Invoking command: java org.uma.jmetal.TestRunnerC3.multiobjective.GDE3Runner
+   * @throws SecurityException Invoking command: java org.uma.jmetal.TestRunnerC5.multiobjective.GDE3Runner
    *                           problemName [referenceFront]
    */
   public static void GDE3(String[] args) throws FileNotFoundException {

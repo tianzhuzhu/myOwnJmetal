@@ -2,7 +2,6 @@ package org.uma.jmetal.runner.multiobjective.ownCode.charpater4;
 
 import org.uma.jmetal.runner.multiobjective.ownCode.EGDE3Runner;
 import org.uma.jmetal.runner.multiobjective.ownCode.MOCellRunner;
-import org.uma.jmetal.runner.multiobjective.ownCode.MOEADRunner;
 import org.uma.jmetal.runner.multiobjective.ownCode.NSGAIIRunner;
 
 public class DataSheetRunnerC3 {
@@ -22,7 +21,7 @@ public class DataSheetRunnerC3 {
             EGDE3Runner.EDGE3(args);
             MOCellRunner.MOCell(args);
             NSGAIIRunner.NSGAII(args);
-            MOEADRunner.MOEAD(args);
+//            MOEADRunner.MOEAD(args);
 
         } catch (Exception e) {
             e.printStackTrace();

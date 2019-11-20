@@ -27,7 +27,7 @@ public class ESPEARunner extends AbstractAlgorithmRunner {
   /**
    * @param args Command line arguments.
    * @throws FileNotFoundException Invoking command:
-   *                               java org.uma.jmetal.TestRunnerC3.multiobjective.ESPEARunner problemName [referenceFront]
+   *                               java org.uma.jmetal.TestRunnerC5.multiobjective.ESPEARunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

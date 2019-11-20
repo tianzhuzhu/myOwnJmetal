@@ -24,7 +24,7 @@ public class RandomSearchRunner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.RandomSearchRunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.RandomSearchRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

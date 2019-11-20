@@ -22,7 +22,7 @@ public class AppRunner {
         int i=0;
         while(i<5) {
 
-            QoSApp.setAmount(i*100);
+            QoSApp.setAmount(i*200);
             System.out.println(QoSApp.getAmount());
             i++;
             try {

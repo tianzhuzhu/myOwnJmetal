@@ -39,6 +39,7 @@ public class QosTask extends AbstractDoubleProblem {
     Random random = new Random();
 
     try {
+
 //      Scanner scanner=new Scanner(new FileInputStream("C:\\Users\\lujin\\OneDrive\\论文\\基于药事服务资源协同认知的调度方法研究\\myOwnJmetal\\459.txt"));
       Scanner scanner=new Scanner(new FileInputStream("C:\\Users\\lujin\\OneDrive\\论文\\基于药事服务资源协同认知的调度方法研究\\myOwnJmetal\\257better.txt"));
       for (int i = 1; i <= 10000; i++) {
@@ -52,12 +53,13 @@ public class QosTask extends AbstractDoubleProblem {
         }
         list.add(doubleList);
       }
+
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-    } finally {
-
     }
+
+
   }
   /** Constructor. Creates default instance of problem ZDT1 (30 decision variables) */
   public QosTask() {

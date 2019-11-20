@@ -32,7 +32,7 @@ public class NSGAIIComposableSchafferProblemRunner extends AbstractAlgorithmRunn
    * @throws JMetalException
    * @throws FileNotFoundException
    * Invoking command:
-    java org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.ResoueceNSGAIIRunner problemName [referenceFront]
+    java org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.ResoueceNSGAIIRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     ComposableDoubleProblem problem;

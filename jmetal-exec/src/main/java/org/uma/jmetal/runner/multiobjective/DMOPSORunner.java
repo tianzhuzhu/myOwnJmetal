@@ -25,7 +25,7 @@ public class DMOPSORunner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.DMOPSORunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.DMOPSORunner problemName [referenceFront]
    */
   public static void main(String[] args) throws Exception {
     DoubleProblem problem;

@@ -34,7 +34,7 @@ public class NSGAIITSPRunner extends AbstractAlgorithmRunner {
    * @throws java.io.IOException
    * @throws SecurityException
    * @throws ClassNotFoundException Invoking command: java
-   *     org.uma.jmetal.TestRunnerC3.multiobjective.nsgaii.NSGAIITSPRunner problemName [referenceFront]
+   *     org.uma.jmetal.TestRunnerC5.multiobjective.nsgaii.NSGAIITSPRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, IOException {
     JMetalRandom.getInstance().setSeed(100L);

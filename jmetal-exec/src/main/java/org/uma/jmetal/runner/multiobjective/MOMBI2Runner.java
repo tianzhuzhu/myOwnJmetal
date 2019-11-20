@@ -35,7 +35,7 @@ public class MOMBI2Runner extends AbstractAlgorithmRunner {
    * @param args Command line arguments.
    * @throws JMetalException
    * @throws FileNotFoundException Invoking command: java
-   *     org.uma.jmetal.TestRunnerC3.multiobjective.MOMBIRunner problemName [referenceFront]
+   *     org.uma.jmetal.TestRunnerC5.multiobjective.MOMBIRunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     Problem<DoubleSolution> problem;

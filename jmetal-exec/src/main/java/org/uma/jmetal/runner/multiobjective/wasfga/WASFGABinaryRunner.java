@@ -27,7 +27,7 @@ public class WASFGABinaryRunner extends AbstractAlgorithmRunner {
    * @throws JMetalException
    * @throws FileNotFoundException
    * Invoking command:
-  java org.uma.jmetal.TestRunnerC3.multiobjective.WASFGA.WASFGARunner problemName [referenceFront]
+  java org.uma.jmetal.TestRunnerC5.multiobjective.WASFGA.WASFGARunner problemName [referenceFront]
    */
   public static void main(String[] args) throws JMetalException, FileNotFoundException {
     BinaryProblem problem;

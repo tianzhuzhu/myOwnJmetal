@@ -3,16 +3,73 @@ package org.uma.jmetal.runner.multiobjective.ownCode.OwnProblem.Capater5;
 import org.uma.jmetal.problem.doubleproblem.impl.AbstractDoubleProblem;
 import org.uma.jmetal.solution.doublesolution.DoubleSolution;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 /** Class representing problem ZDT1 */
 @SuppressWarnings("serial")
 public class QosTask extends AbstractDoubleProblem {
+  static List<List<Double>> list =new ArrayList<>();
+  static List<Double> distanceList =new ArrayList<>();
+  public static List<List<Double>> getList() {
+    return list;
+  }
 
+  public static void setList(List<List<Double>> list) {
+    QosTask.list = list;
+  }
+
+  public static int getAmount() {
+    return amount;
+  }
+
+  public static void setAmount(int amount) {
+    QosTask.amount = amount;
+  }
+
+  static int amount=100;
+  static {
+
+    File file = null;
+    FileReader fw = null;
+    Date date = new Date();
+    Random random = new Random();
+
+    try {
+
+//      Scanner scanner=new Scanner(new FileInputStream("C:\\Users\\lujin\\OneDrive\\论文\\基于药事服务资源协同认知的调度方法研究\\myOwnJmetal\\459.txt"));
+      Scanner scanner=new Scanner(new FileInputStream("C:\\Users\\lujin\\OneDrive\\论文\\基于药事服务资源协同认知的调度方法研究\\myOwnJmetal\\257better.txt"));
+      for (int i = 1; i <= 10000; i++) {
+        //成本0.5-1 时间0.2-1 可靠性0.8-1 质量0-1
+
+        String s = scanner.nextLine();
+        String[] s1 = s.split(" ");
+        List<Double> doubleList=new ArrayList<>();
+        for (int i1 = 0; i1 < s1.length; i1++) {
+          doubleList.add(Double.parseDouble(s1[i1]));
+        }
+        list.add(doubleList);
+      }
+      scanner=new Scanner("C:\\Users\\lujin\\OneDrive\\论文\\基于药事服务资源协同认知的调度方法研究\\myOwnJmetal\\257better.txt");
+      String s = scanner.nextLine();
+      String[] s1 = s.split(" ");
+
+      for (int i1 = 0; i1 < s1.length; i1++) {
+        distanceList.add(Double.parseDouble(s1[i1]));
+      }
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+
+  }
   /** Constructor. Creates default instance of problem ZDT1 (30 decision variables) */
   public QosTask() {
-    this(30);
+    this(7);
   }
 
   /**
@@ -22,8 +79,8 @@ public class QosTask extends AbstractDoubleProblem {
    */
   public QosTask(Integer numberOfVariables) {
     setNumberOfVariables(numberOfVariables);
-    setNumberOfObjectives(2);
-    setName("ZDT1");
+    setNumberOfObjectives(3);
+    setName("QosResource");
 
     List<Double> lowerLimit = new ArrayList<>(getNumberOfVariables()) ;
     List<Double> upperLimit = new ArrayList<>(getNumberOfVariables()) ;
@@ -38,41 +95,41 @@ public class QosTask extends AbstractDoubleProblem {
 
   /** Evaluate() method */
   public void evaluate(DoubleSolution solution) {
-    double[] f = new double[getNumberOfObjectives()];
 
-    f[0] = solution.getVariable(0);
-    double g = this.evalG(solution);
-    double h = this.evalH(f[0], g);
-    f[1] = h * g;
+  double cost,cost1,cost2,cost3;
+  double time,time1,time2,time3;
+  double quality,quality1,quality2,quality3;
+    Double v0 = solution.getVariable(0)*amount;
+    Double v1 = solution.getVariable(1)*amount;
+    Double v2 = solution.getVariable(2)*amount;
+    Double v3 = solution.getVariable(3)*amount;
+    Double v4 = solution.getVariable(4)*amount;
+    Double v5 = solution.getVariable(5)*amount;
+    Double v6 = solution.getVariable(6)*amount;
 
-    solution.setObjective(0, f[0]);
-    solution.setObjective(1, f[1]);
+    cost1=(list.get((int) Math.floor(v0)).get(0)+list.get((int) Math.floor(v1)+1000).get(0)+list.get((int) Math.floor(v2)+2000).get(0))/3;
+    time1=(list.get((int) Math.floor(v0)).get(1)+list.get((int) Math.floor(v1)+1000).get(1)+list.get((int) Math.floor(v2)+2000).get(1))/3;
+    quality1=(list.get((int) Math.floor(v0)).get(2)*list.get((int) Math.floor(v0)).get(3)+
+            list.get((int) Math.floor(v1)+1000).get(2)*list.get((int) Math.floor(v1)+1000).get(3)+
+            list.get((int) Math.floor(v2)+2000).get(2)*list.get((int) Math.floor(v2)+2000).get(3))/3;
+    cost2=(list.get((int) Math.floor(v3)+3000).get(0)+list.get((int) Math.floor(v4)+4000).get(0))/2;
+    time2=(list.get((int) Math.floor(v3)+3000).get(1)+list.get((int) Math.floor(v4)+4000).get(1))/2;
+    quality2=(
+            list.get((int) Math.floor(v3)+3000).get(2)*list.get((int) Math.floor(v3)+3000).get(3)+
+            list.get((int) Math.floor(v4)+4000).get(2)*list.get((int) Math.floor(v4)+4000).get(3))/2;
+    cost3=(list.get((int) Math.floor(v5)+5000).get(0)+list.get((int) Math.floor(v6)+6000).get(0))/2;
+    time3=(list.get((int) Math.floor(v5)+5000).get(1)+list.get((int) Math.floor(v6)+6000).get(1))/2;
+    quality3=(
+            list.get((int) Math.floor(v5)+5000).get(3)*list.get((int) Math.floor(v5)+5000).get(3)+
+                    list.get((int) Math.floor(v6)+6000).get(2)*list.get((int) Math.floor(v6)+6000).get(3))/2;
+
+    cost=cost1*cost2*cost3;
+    time=time1*time2*time3;
+    quality=quality1*quality2*quality3;
+    solution.setObjective(0,cost);
+    solution.setObjective(1,time);
+    solution.setObjective(2,-quality);
+    //todo
   }
 
-  /**
-   * Returns the value of the ZDT1 function G.
-   *
-   * @param solution Solution
-   */
-  protected double evalG(DoubleSolution solution) {
-    double g = 0.0;
-    for (int i = 1; i < solution.getNumberOfVariables(); i++) {
-      g += solution.getVariable(i);
-    }
-    double constant = 9.0 / (solution.getNumberOfVariables() - 1);
-
-    return constant * g + 1.0;
-  }
-
-  /**
-   * Returns the value of the ZDT1 function H.
-   *
-   * @param f First argument of the function H.
-   * @param g Second argument of the function H.
-   */
-  protected double evalH(double f, double g) {
-    double h ;
-    h = 1.0 - Math.sqrt(f / g);
-    return h;
-  }
 }
